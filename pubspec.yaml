@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  #A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.13
   # State management
   flutter_bloc: ^8.1.6
   # Code generator (mainly used with cubit & retrofit)
