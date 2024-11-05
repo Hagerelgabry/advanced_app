@@ -1,5 +1,4 @@
 import 'package:advanced_app/core/helpers/extension.dart';
-import 'package:advanced_app/core/networking/api_result.dart';
 import 'package:advanced_app/core/routing/routes.dart';
 import 'package:advanced_app/core/theming/colors.dart';
 import 'package:advanced_app/core/theming/styles.dart';
@@ -15,7 +14,9 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is LoginLoading ||
+          current is LoginSuccess ||
+          current is LoginError,
       listener: (context, state) {
         state.whenOrNull(
           loading: () {
@@ -30,6 +31,7 @@ class LoginBlocListener extends StatelessWidget {
           },
           success: (loginResponse) {
             context.pop();
+
             context.pushNamed(Routes.homeScreen);
           },
           error: (error) {
