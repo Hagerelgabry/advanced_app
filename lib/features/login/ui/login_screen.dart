@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                     ),
 
 
-                    verticalSpace(18),
+                    verticalSpace(17),
 
                     const TermsAndConditionsText(),
                     verticalSpace(60),
