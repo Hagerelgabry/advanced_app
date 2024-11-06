@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                         validateThenDoLogin(context);
                       },
                     ),
-                    verticalSpace(20),
+                    verticalSpace(17),
                     const TermsAndConditionsText(),
                     verticalSpace(60),
                     const DontHaveAccountText(),
