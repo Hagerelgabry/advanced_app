@@ -1,4 +1,7 @@
 import 'package:advanced_app/core/di/dependency_injection.dart';
+import 'package:advanced_app/core/helpers/constants.dart';
+import 'package:advanced_app/core/helpers/extension.dart';
+import 'package:advanced_app/core/helpers/shared_pref_helper.dart';
 import 'package:advanced_app/core/routing/app_router.dart';
 import 'package:advanced_app/doc_app.dart';
 import 'package:flutter/material.dart';
@@ -10,4 +13,14 @@ void main() async {
   runApp(DocApp(
     appRouter: AppRouter(),
   ));
+}
+
+checkLoggedInUser() async {
+  String? userToken =
+      await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+  if (userToken.isNullOrEmpty()) {
+    isLoggedInUser = true;
+  } else {
+    isLoggedInUser = false;
+  }
 }
